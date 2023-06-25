@@ -22,7 +22,14 @@ spec:
         - name: backend-container
           image: yolo-backend:1.0.0
           ports:
-            - containerPort: 5000            
+            - containerPort: 5000 
+        - name: backend-database
+          image: mongo
+          ports:
+            - containerPort: 27017            
           env:
-            - name: ENV_VARIABLE
-              value: "your-value"
+            - name: MONGO_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: MONGO_URL         
