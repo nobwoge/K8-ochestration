@@ -16,28 +16,21 @@ spec:
     spec:
       containers:
         - name: client-container
-          image: yolo-client:1.0.0
+          image: rwambui/yolo-client:1.0.0
           ports:
             - containerPort: 3000
         - name: backend-container
-          image: yolo-backend:1.0.0
+          image: rwambui/yolo-backend:1.0.0
           ports:
-            - containerPort: 5000 
-        - name: backend-database
-          image: mongo
-          ports:
-            - containerPort: 27017            
-          env:
-            - name: MONGO_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: mongo-config
-                  key: MONGO_URL  
-      volumeMounts:
-          - name: backend-volume
-            mountPath: /data/db
+            - containerPort: 5000
+          volumeMounts:
+            - name: backend-volume
+              mountPath: /data/db
       volumes:
         - name: backend-volume
           persistentVolumeClaim:
             claimName: mongodb-pvc
+
+
+
        
