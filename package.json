@@ -1,0 +1,11 @@
+{
+  "name": "kubernetes-ochestration",
+  "version": "1.0.0",
+  "description": "This is Yolo-client Ochestration using kubernetes.\r The images used were containerized using docker and pushed to docker hub.\r 1. rwambui/yolo-client:1.0.0\r 2. rwambui/yolo-backend:1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
