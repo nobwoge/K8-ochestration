@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yolo-deployment
+  labels:
+    app: yolo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yolo-app
+  template:
+    metadata:
+      labels:
+        app: yolo-app
+    spec:
+      containers:
+        - name: client-container
+          image: yolo-client:1.0.0
+          ports:
+            - containerPort: 3000
+        - name: backend-container
+          image: yolo-backend:1.0.0
+          ports:
+            - containerPort: 5000            
+          env:
+            - name: ENV_VARIABLE
+              value: "your-value"
