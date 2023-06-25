@@ -23,6 +23,16 @@ spec:
           image: rwambui/yolo-backend:1.0.0
           ports:
             - containerPort: 5000
+        - name: backend-database
+          image: mongo
+          ports:
+            - containerPort: 27017
+          env:
+            - name: MONGO_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: MONGO_URL
           volumeMounts:
             - name: backend-volume
               mountPath: /data/db
