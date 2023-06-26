@@ -1,24 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: yolo-deployment
+  name: backend-deployment
   labels:
-    app: yolo-app
+    app: backend-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: yolo-app
+      app: backend-app
   template:
     metadata:
       labels:
-        app: yolo-app
+        app: backend-app
     spec:
       containers:
-        - name: client-container
-          image: rwambui/yolo-client:1.0.0
-          ports:
-            - containerPort: 3000
         - name: backend-container
           image: rwambui/yolo-backend:1.0.0
           ports:
