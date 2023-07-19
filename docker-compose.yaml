@@ -2,7 +2,7 @@ version: "3"
 services:
   client:
     container_name: yolo-client
-    image: rwambui/yolo-client:1.0.1
+    image: rwambui/yolo-client:1.0.0
     ports:
      - 3000:80
     depends_on:
