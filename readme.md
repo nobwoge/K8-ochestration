@@ -11,8 +11,8 @@ Below are the steps followed.
 
 
 The images used were containerized using docker.
-1. rwambui/yolo-client:1.0.0
-2. rwambui/yolo-backend:1.0.0
+1. nobwoge/yolo-client:1.0.0
+2. nobwoge/yolo-backend:1.0.0
 
 pvc file is created on the backend folder to provision storage volumes.
 The pvc is then used to mount the storage volume to Pods.
